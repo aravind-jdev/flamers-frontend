@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLAMES - Destiny Revealed</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="classic">
+    <main class="app-container">
+        <!-- Left Panel -->
+        <aside class="sidebar">
+            <div class="card main-card">
+                <div class="card-header">
+                    <h2>Reveal Your Fate</h2>
+                    <p class="card-subtitle">Enter two names and discover your destiny</p>
+                </div>
+
+                <form class="input-group" onsubmit="handleSubmit(event)">
+                    <div class="input-wrapper">
+                        <input 
+                            id="name1" 
+                            type="text"
+                            placeholder="First Name"
+                            class="input-field"
+                            required
+                        >
+                        <div class="input-underline"></div>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <input 
+                            id="name2" 
+                            type="text"
+                            placeholder="Second Name"
+                            class="input-field"
+                            required
+                        >
+                        <div class="input-underline"></div>
+                    </div>
+
+                    <div class="theme-selector">
+                        <label class="theme-label">Choose Theme:</label>
+                        <div class="theme-buttons">
+                            <button 
+                                type="button"
+                                class="theme-btn active"
+                                data-theme="classic"
+                                onclick="setMode('classic')"
+                                id="classicBtn"
+                            >
+                                <span class="theme-icon">✨</span>
+                                <span>Classic</span>
+                            </button>
+                            <button 
+                                type="button"
+                                class="theme-btn"
+                                data-theme="genz"
+                                onclick="setMode('genz')"
+                                id="genzBtn"
+                            >
+                                <span class="theme-icon">🔮</span>
+                                <span>Gen-Z</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary">
+                        <span>Reveal Destiny</span>
+                        <span class="btn-icon">✨</span>
+                    </button>
+                </form>
+
+                <div class="result-container" id="resultContainer" style="display: none;">
+                    <div class="result-card">
+                        <p class="result-label">Your Destiny Is:</p>
+                        <h1 id="resultText" class="result-text"></h1>
+                        <p id="verseText" class="result-verse"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Controls -->
+            <div class="bottom-controls">
+                <button class="btn-icon-circle music-toggle" onclick="toggleMusic()" title="Toggle Music">🎵</button>
+                <button class="btn-icon-circle history-toggle" onclick="toggleHistory()" title="View History">📋</button>
+            </div>
+        </aside>
+
+        <!-- Right Panel -->
+        <section class="content-section">
+            <div class="info-section">
+
+                <div class="card info-card">
+                    <div class="card-header">
+                        <h3>What is FLAMES?</h3>
+                    </div>
+                    <p>
+                        A playful compatibility game inspired by the classic FLAMES method. 
+                        Enter two names and let the ancient algorithm reveal your potential connection. 
+                        It's all in good fun!
+                    </p>
+                </div>
+
+                <div class="card info-card">
+                    <div class="card-header">
+                        <h3>How It Works</h3>
+                    </div>
+                    <ol class="steps-list">
+                        <li>
+                            <span class="step-number">1</span>
+                            <span>Enter two names</span>
+                        </li>
+                        <li>
+                            <span class="step-number">2</span>
+                            <span>Remove common letters</span>
+                        </li>
+                        <li>
+                            <span class="step-number">3</span>
+                            <span>Count remaining characters</span>
+                        </li>
+                        <li>
+                            <span class="step-number">4</span>
+                            <span>Eliminate letters until one remains</span>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="card info-card">
+                    <div class="card-header">
+                        <h3>Letter Meanings</h3>
+                    </div>
+
+                    <div class="meaning-grid" id="meaningGrid"></div>
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- History Drawer -->
+    <div class="history-drawer" id="historyDrawer">
+        <div class="drawer-header">
+            <h3>Recent Results</h3>
+            <button class="btn-close" onclick="toggleHistory()" title="Close">✕</button>
+        </div>
+        <div class="drawer-divider"></div>
+        <ul id="history" class="history-list"></ul>
+    </div>
+
+    <!-- Music Player -->
+    <audio id="themeMusic" loop></audio>
+
+    <!-- Overlay (for closing drawer) -->
+    <div class="overlay" id="overlay" onclick="toggleHistory()"></div>
+
+    <footer class="app-footer">
+    <div class="footer-content">
+        <p>Built with ✨ by Aravind</p>
+        <div class="footer-links">
+            <a href="mailto:aravind18l15@gmail.com">Email</a>
+            <a href="https://github.com/aravind-jdev" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/aravind-ln" target="_blank">LinkedIn</a>
+        </div>
+    </div>
+</footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
