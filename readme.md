@@ -10,7 +10,7 @@ Built with Spring Boot (Java 21), Docker, and deployed using Render (backend) + 
 
 ## 🌐 Live Demo
 
-Frontend: [https://flamers.vercel.app](https://flamers.vercel.app)
+Frontend: [https://flamers.vercel.app](https://flamers.vercel.app)  
 Backend API: [https://flamers-backend.onrender.com](https://flamers-backend.onrender.com)
 
 ---
@@ -143,9 +143,9 @@ frontend/
 
 ## 🧑‍💻 Author
 
-Aravind
-B.Tech IT Student
-Sri Sairam Institute of Technology, Chennai.
+Aravind  
+B.Tech IT Student  
+Sri Sairam Institute of Technology, Chennai.  
 
 ---
 
